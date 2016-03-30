@@ -2,17 +2,21 @@ package com.king.kingpromote.base;
 
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 import com.king.kingpromote.R;
+import com.king.kingpromote.utils.UIUtils;
 
 import butterknife.ButterKnife;
 
@@ -111,6 +115,55 @@ public abstract class BaseActivity extends AppCompatActivity{
                 break;
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    /**
+     * 设置标题栏左侧图标和点击事件
+     *
+     * @param iconResId
+     * @param onClickListener
+     */
+    public void setLeftIcon(int iconResId, @Nullable View.OnClickListener onClickListener) {
+        if (leftTitleTv != null) {
+            leftTitleTv.setVisibility(View.VISIBLE);
+            Drawable icon = getResources().getDrawable(iconResId);
+            icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
+            leftTitleTv.setCompoundDrawables(icon, null, null, null);
+            leftTitleTv.setCompoundDrawablePadding(UIUtils.dip2px(this, 4));
+            leftTitleTv.setOnClickListener(onClickListener);
+        }
+    }
+
+    /**
+     * 设置标题栏右侧图标和点击事件
+     *
+     * @param iconResId
+     * @param onClickListener
+     */
+    public void setRightIcon(int iconResId, @Nullable View.OnClickListener onClickListener) {
+        if (rightTitleTv != null) {
+            rightTitleTv.setVisibility(View.VISIBLE);
+            Drawable icon = getResources().getDrawable(iconResId);
+            icon.setBounds(0, 0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
+            rightTitleTv.setCompoundDrawables(icon, null, null, null);
+            rightTitleTv.setCompoundDrawablePadding(UIUtils.dip2px(this, 4));
+            rightTitleTv.setOnClickListener(onClickListener);
+        }
+    }
+
+    /**
+     * 设置标题栏右侧文本和点击事件
+     *
+     * @param text
+     * @param onClickListener
+     */
+    public void setRightText(String text,int color, @Nullable View.OnClickListener onClickListener) {
+        if (rightTitleTv != null) {
+            rightTitleTv.setVisibility(View.VISIBLE);
+            rightTitleTv.setText(text);
+            rightTitleTv.setTextColor(color);
+            rightTitleTv.setOnClickListener(onClickListener);
+        }
     }
 
 }

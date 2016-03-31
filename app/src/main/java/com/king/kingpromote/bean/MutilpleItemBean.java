@@ -5,6 +5,7 @@ package com.king.kingpromote.bean;
  */
 public class MutilpleItemBean {
 
+    //从1开始
     public final static int Item_Type_1= 1;
     public final static int Item_Type_2= 2;
     public final static int Item_Type_3= 3;

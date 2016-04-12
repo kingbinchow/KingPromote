@@ -1,6 +1,7 @@
 package com.king.kingpromote.activity;
 
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.king.kingpromote.R;
@@ -9,7 +10,10 @@ import com.king.kingpromote.base.adapterhelper.BaseAdapterHelper;
 import com.king.kingpromote.base.adapterhelper.MultiItemTypeSupport;
 import com.king.kingpromote.base.adapterhelper.QuickAdapter;
 import com.king.kingpromote.bean.MutilpleItemBean;
+import com.king.kingpromote.component.HeartLoadingPathView;
+import com.king.kingpromote.component.RotateClockView;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -69,6 +73,14 @@ public class MultipleItemTypeDemoActivity extends BaseActivity {
             }
         };
         initListViewData();
+        try {
+           Class c =  Class.forName("");
+            Field[]f =c.getDeclaredFields();
+            Object c1 = c.newInstance();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         mAdapter = new QuickAdapter<MutilpleItemBean>(MultipleItemTypeDemoActivity.this, mListViewDatas,
                 multiItemTypeSupport) {
@@ -92,6 +104,11 @@ public class MultipleItemTypeDemoActivity extends BaseActivity {
 //		mAdapter.showIndeterminateProgress(true);
         // 设置适配器
         multipleLv.setAdapter(mAdapter);
+
+//        RotateClockView view = new RotateClockView(this);
+//        ((ViewGroup)multipleLv.getParent()).addView(view);
+//        HeartLoadingPathView view = new HeartLoadingPathView(this);
+//        ((ViewGroup)multipleLv.getParent()).addView(view);
 
     }
 

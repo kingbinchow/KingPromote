@@ -11,13 +11,47 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
+
+    //签名
+    signingConfigs {
+        debug {
+            //storeFile file("kp.keystore")
+        }
+
+        //你自己的keystore信息
         release {
+//           storeFile file("kp.keystore")
+            //storePassword ""
+            //keyAlias "sam"
+            //keyPassword ""
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            buildConfigField "boolean", "ISDEBUG", "true"
+        }
+
+        release {
+            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+    //渠道Flavors
+    productFlavors {
+        GooglePlay{}
+        NDuo{}
+        //xiaomi {}
+        //umeng {}
+    }
+
 }
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

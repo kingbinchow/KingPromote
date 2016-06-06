@@ -34,17 +34,12 @@ public abstract class BaseActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void setContentView(@LayoutRes int layoutResID) {
-        super.setContentView(layoutResID);
         addToolbar();
-        ButterKnife.bind(this);
         initView();
         initData();
         getPermissions();
     }
+
 
     private void addToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);

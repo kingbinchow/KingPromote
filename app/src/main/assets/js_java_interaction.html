@@ -1,0 +1,22 @@
+<html>
+<script type="text/javascript">
+    function alertMessage(message) {
+        alert(message)
+    }
+    function showMessage(message) {
+        window.jsCallJava.showDialog(message)
+    }
+    function sumToJava(number1, number2){
+        var result = number1 + number2;
+       window.jsCallJava.onSumResult("sum("+number1+","+number2+") = "+result);
+    }
+
+    function testEvaluateJavascript(){
+        return "{'key':'value'}";
+    }
+
+</script>
+-----------------------WebView--------------------------
+<br></br>
+    <a id='btn_js_call_java' onclick="showMessage('js call Java content')">js call java</a>
+</html>

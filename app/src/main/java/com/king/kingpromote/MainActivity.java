@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.king.kingpromote.activity.LoginActivity;
 import com.king.kingpromote.activity.MultipleItemTypeDemoActivity;
 import com.king.kingpromote.base.BaseActivity;
+
 
 import java.util.Arrays;
 
@@ -22,13 +25,19 @@ public class MainActivity extends ListActivity {
     @Bind(R.id.lv_multiple_demo)
     ListView multipleLv;
 
+
+    String listArray[] = {
+            "Simple Adapter Text",
+            "MultiItemStyleText",
+            "LoginActivity DataBinding"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getListView().setAdapter(
                 new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, Arrays.asList(
-                        "Simple Adapter Text", "MultiItemStyleText")));
+                        android.R.layout.simple_list_item_1, Arrays.asList(listArray
+                        )));
     }
 
     @Override
@@ -42,6 +51,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 1:
                 intent = new Intent(this, MultipleItemTypeDemoActivity.class);
+                break;
+            case 2:
+                intent = new Intent(this, LoginActivity.class);
                 break;
         }
         if (intent != null)

@@ -6,7 +6,7 @@
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.JavaJsInteractionActivityDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -14,6 +14,8 @@
         </activity>
 
         <activity android:name=".activity.MultipleItemTypeDemoActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"></activity>
 
     </application>

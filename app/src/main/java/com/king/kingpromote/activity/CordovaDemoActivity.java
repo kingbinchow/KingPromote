@@ -14,6 +14,6 @@ public class CordovaDemoActivity extends CordovaActivity
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
-        loadUrl(launchUrl);
+        loadUrl("http://www.baidu.com");
     }
 }

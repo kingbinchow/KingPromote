@@ -6,7 +6,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_multiple_demo">
+        android:id="@+id/lv_multiple_demo1">
 
     </ListView>
 

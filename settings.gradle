@@ -1,1 +1,2 @@
-include ':app', ':appcontainer', ':CordovaLib'
+include ':app', ':appcontainer', ':CordovaLib', ':expandablerecycleradapter'
+include ':library'

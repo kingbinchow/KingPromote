@@ -3,9 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_multiple_item_type_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/blue" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        >
+        <View
+            android:id="@+id/v_diver3"
+            android:layout_marginLeft="100dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/blue"/>
+        <TextView
+            android:layout_toRightOf="@id/v_diver3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_multiple_item_type_3"
+            android:textColor="@color/blue" />
+        <TextView
+            android:layout_toRightOf="@id/tv_multiple_item_type_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_multiple_item2_type_3"
+            android:textColor="@color/blue"
+            android:visibility="invisible"/>
+
+
+    </RelativeLayout>
 </LinearLayout>
